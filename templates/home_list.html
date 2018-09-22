@@ -1,0 +1,18 @@
+{% if object_list %}
+          {% for person in object_list %}
+                <div>
+                    {{ person.nombre }} -- {{ person.apellido }} --
+                    {{ person.edad }}  -- {{ person.telefono }} --
+                    {{ person.ocupacion }} -- {{ person.ciudad }} --
+                    {{ person.disponibilidad }}
+                </div>
+          {% endfor %}
+{% endif %}
+
+
+<form method="post" action="{% url "voluntario:list_filter_person" %}">
+     {% csrf_token %}
+     <br><br>
+      {{ form }}
+      <button type="submit">Search</button>
+</form>
