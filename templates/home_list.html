@@ -1,10 +1,17 @@
+
+{% extends 'base.html' %}
+
+{% block title %} Blog nuevo {% endblock %}
+{% block content %}
+
 {% if object_list %}
           {% for person in object_list %}
                 <div>
                     {{ person.nombre }} -- {{ person.apellido }} --
                     {{ person.edad }}  -- {{ person.telefono }} --
                     {{ person.ocupacion }} -- {{ person.ciudad }} --
-                    {{ person.disponibilidad }}
+                    {{ person.disponibilidad }} -- {{ person.franjaHoraria }}
+                      <a href="{% url  'voluntario:ver_person' person.id %}">Ver Detalle</a>
                 </div>
           {% endfor %}
 {% endif %}
@@ -16,3 +23,5 @@
       {{ form }}
       <button type="submit">Search</button>
 </form>
+
+{% endblock content %}

@@ -20,7 +20,10 @@ from .views import *
 app_name = 'voluntario'
 
 urlpatterns = [
-#    path('home/', home, name='home'),
-    path('homeView/', HomeList.as_view(), name='home'),
+    path('', HomeList.as_view(), name='home'),
     path('filter/', PersonListFilter, name='list_filter_person'),
+    path('nuevaPersona/', PersonCreate.as_view(), name='crear_persona'),
+    path('verPersona/<int:pk>/', PersonVer.as_view(), name='ver_person'),
+    path('EditPerson/<int:pk>/', PersonUpdate.as_view(), name='edit_person'),
+    path('borrarPerson/<int:pk>/', PersonDelete.as_view(), name='borrar_person'),
 ]

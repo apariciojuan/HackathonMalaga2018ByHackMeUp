@@ -1,0 +1,60 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <title>
+      {% block title %} ONG {% endblock %}
+    </title>
+    <meta charset="utf-8">
+    <meta name="description" content="ONG">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script> <!-- markdown necessary -->
+    <!-- Bootstrap core CSS -->
+    <link href="https://bootswatch.com/4/minty/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet"> -->
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.css">
+    <link href=" {% static "css/style.css" %}" rel="stylesheet">
+    {% block css %}{% endblock css %}
+  </head>
+
+  <body>
+    <header>
+      <div class="containe cabecera">
+        <div class="row bg-primary ">
+          <div class="col-sm-12 imagenEncabezado">
+
+            <div class="col-sm-2">
+
+            </div>
+            <div class="col-sm-8">
+              <a class="tituloPagina"  href="/">Voluntarios Profesionales ONG</a>
+            </div>
+            <div class="col-sm-2">
+                {# ver que poner o sacar #}{% include 'loginOption.html' %}
+            </div>
+           <!-- <div class="col-sm-5">
+               <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <h3> Fecha {% now "SHORT_DATETIME_FORMAT"  %}</h3>
+                  </li>
+               </ul>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </header>
+    <section>
+    {% block content %}{% endblock content %}
+    </section>
+    <!-- Footer -->
+    <footer class="py-2 bg-primary ">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; HackMeUp {% now "Y" %}</p>
+      </div>
+
+    </footer>
+
+  </body>
+
+</html>

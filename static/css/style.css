@@ -1,0 +1,64 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+.cabecera {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.alinearDerecha{
+    float: right;
+}
+.imagenEncabezado{
+    height: 250px;
+    width: 100%;
+    background: url("/static/img/cabecera.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.tituloPagina{
+    font-family:Geneva;
+    font-size: 60px;
+    font-style: oblique;
+    color: #FFFFFF;
+    position: absolute;
+    top: 70px;
+    left: 50px;
+}
+
+.MiFoto{
+    border-radius: 200px;
+    height: 150px;
+    float: left;
+    position: relative;
+    bottom: -125px;
+    border: 2px solid yellow;
+}
+
+.CajasHome{
+    width: 100%;
+
+}
+.secciones {
+    margin: 20px;
+    padding: 30px;
+    display: flex;
+}
+
+.titulosNotas{
+    font-family:Geneva;
+    font-size: 34px;
+    font-style: oblique;
+    color: black;
+}
+
+.datosAutor{
+    color:blue;
+}
+
+.bordes{
+    border: 3px solid;
+}
+
+

@@ -1,0 +1,14 @@
+<!--- <ul class="navbar-nav alinearDerecha"> --->
+ <ul>
+      {% if request.user.is_authenticated%}
+          <li class="nav-item">
+              {{request.user.username}}
+              <a class="nav-link" href="{% url "accounts:logout" %}">logout</a>
+              <a class="nav-link" href="{% url "voluntario:crear_persona" %}">Agregar Voluntario</a>
+          </li>
+      {% else %}
+          <li class="nav-item">
+              <a class="nav-link" href="{% url "accounts:login" %}">Login</a>
+          </li>
+      {% endif %}
+  </ul>

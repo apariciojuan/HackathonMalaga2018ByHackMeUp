@@ -1,4 +1,4 @@
-from .models import Person, dias, ciudades, ocupaciones
+from .models import Person, dias, ciudades, ocupaciones, rangoHorario
 from django import forms
 
 
@@ -10,6 +10,8 @@ class SearchForm(forms.Form):
                                             choices=ciudades, required=False)
     Ocupacion = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple,
                                             choices=ocupaciones, required=False)
+    FranjaHorario = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple,
+                                            choices=rangoHorario, required=False)
 
 
 class PersonCreateForm(forms.ModelForm):
@@ -24,6 +26,7 @@ class PersonCreateForm(forms.ModelForm):
             'ocupacion',
             'ciudad',
             'disponibilidad',
+            'franjaHoraria',
         ]
         labels = {
             'nombre': 'Nombre',
@@ -33,10 +36,11 @@ class PersonCreateForm(forms.ModelForm):
             'ocupacion': 'Ocupacion',
             'ciudad': 'Ciudad',
             'disponibilidad': 'Disponibilidad',
+            'franjaHoraria': 'Franja Horaria',
         }
         widgets = {
 
-             'ciudad': forms.CheckboxSelectMultiple(),
-             'ocupacion': forms.CheckboxSelectMultiple(),
-             'disponibilidad': forms.CheckboxSelectMultiple(),
+            # 'ciudad': forms.CheckboxSelectMultiple(),
+            # 'ocupacion': forms.CheckboxSelectMultiple(),
+            # 'disponibilidad': forms.CheckboxSelectMultiple(),
 }

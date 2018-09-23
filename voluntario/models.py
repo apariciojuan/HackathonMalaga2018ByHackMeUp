@@ -25,6 +25,13 @@ ocupaciones = (
     ('Ingeniero', 'Ingeniero'),
 )
 
+rangoHorario = (
+    ('Mañana', 'Mañana'),
+    ('Tarde', 'Tarde'),
+    ('Noche', 'Noche'),
+)
+
+
 class Person(models.Model):
     nombre= models.CharField(max_length=30)
     apellido = models.CharField(max_length=30)
@@ -33,6 +40,8 @@ class Person(models.Model):
     ocupacion = models.CharField(max_length=50, choices=ocupaciones)
     ciudad = models.CharField(max_length=100, choices=ciudades)
     disponibilidad = models.CharField(max_length=20, choices=dias)
+    franjaHoraria = models.CharField(max_length=20, choices=rangoHorario, null=True, blank=True)
+
 
     def __str__(self):
         return '{} {}'.format(self.nombre, self.apellido)
