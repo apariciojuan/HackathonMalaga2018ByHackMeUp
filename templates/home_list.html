@@ -3,7 +3,13 @@
 
 {% block title %} Blog nuevo {% endblock %}
 {% block content %}
+<div class="containe">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="col-sm-2">
 
+            </div>
+        <div class="col-sm-8">
 {% if object_list %}
           {% for person in object_list %}
                 <div>
@@ -15,13 +21,18 @@
                 </div>
           {% endfor %}
 {% endif %}
+</div>
 
 
-<form method="post" action="{% url "voluntario:list_filter_person" %}">
+<div class="col-sm-2">
+  <form method="post" action="{% url "voluntario:list_filter_person" %}">
      {% csrf_token %}
      <br><br>
       {{ form }}
       <button type="submit">Search</button>
-</form>
-
+  </form>
+ </div>
+ </div>
+ </div>
+</div>
 {% endblock content %}
