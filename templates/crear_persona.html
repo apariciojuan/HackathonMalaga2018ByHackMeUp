@@ -7,6 +7,7 @@
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
+    {{ form2.as_table }}
     <button type="submit">Guardar</button>
 </form>
   <a href="{% url  'voluntario:home' %}">Volver</a>

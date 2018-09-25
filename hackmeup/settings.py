@@ -27,7 +27,7 @@ SECRET_KEY = '#+cyc$tvv=sjk6k*au1+k_$c%4y^7-r$&t=l5e!49(b(=b6@i5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -65,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'voluntario.contextProcesorDias.context_data',
             ],
         },
     },

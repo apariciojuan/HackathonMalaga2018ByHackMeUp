@@ -2,13 +2,46 @@
 
 {% block title %}  Detalle {% endblock %}
 {% block content %}
+
+<div class="containe">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="col-sm-1">
+
+            </div>
+        <div class="col-sm-10">
 {% if object %}
           <div>
-                    {{ object.nombre }} -- {{ object.apellido }} --
-                    {{ object.edad }}  -- {{ object.telefono }} --
-                    {{ object.ocupacion }} -- {{ object.ciudad }} --
-                    {{ object.disponibilidad }} -- {{ object.franjaHoraria }}
+            <ul>
+                <li>Nombre y Apellido: {{ object.nombre }} {{ object.apellido }} </li>
+                <li>Edad: {{ object.edad }}</li>
+                <li>Telefono: {{ object.telefono }} </li>
+                <li>Email: {{ object.email }}</li>
+                <li>Ocupacion: {{ object.ocupacion }} </li>
+                <li>Ciudad:{{ object.ciudad }}</li>
+              </ul>
 
+                <table style="width:100%">
+                  <tr>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miercoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                    <th>Sabado</th>
+                    <th>Domingo</th>
+                  </tr>
+                  <tr>
+                    <td>{% for d in object.disponibilidad.Lunes.all %} {{ d }} {% endfor %}</td>
+                    <td>{% for d in object.disponibilidad.Martes.all %} {{ d }} {% endfor %}</td>
+                    <td>{% for d in object.disponibilidad.Miercoles.all %} {{ d }} {% endfor %}</td>
+                    <td>{% for d in object.disponibilidad.Jueves.all %} {{ d }} {% endfor %}</td>
+                    <td>{% for d in object.disponibilidad.Viernes.all %} {{ d }} {% endfor %}</td>
+                    <td>{% for d in object.disponibilidad.Sabado.all %} {{ d }} {% endfor %}</td>
+                    <td>{% for d in object.disponibilidad.Domingo.all %} {{ d }} {% endfor %}</td>
+                  </tr>
+              </table>
+              <br>
           </div>
           {% if request.user.is_authenticated%}
               <a href="{% url  'voluntario:edit_person' object.id %}">Edit</a>
@@ -16,4 +49,14 @@
           {% endif %}
           <a href="{% url  'voluntario:home' %}">Volver</a>
 {% endif %}
+
+  </div>
+
+
+    <div class="col-sm-1">
+    </div>
+  </div>
+ </div>
+</div>
+
 {% endblock content %}

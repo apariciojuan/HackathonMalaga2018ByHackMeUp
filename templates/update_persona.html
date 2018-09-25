@@ -2,12 +2,28 @@
 
 {% block title %}  Update {% endblock %}
 {% block content %}
+<div class="containe">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="col-sm-1">
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Guardar</button>
-</form>
+            </div>
+        <div class="col-sm-10">
+          <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            {{ form2.as_table }}
+            <button type="submit">Guardar</button>
+          </form>
   <a href="{% url  'voluntario:home' %}">Volver</a>
+</div>
+
+
+  <div class="col-sm-1">
+  </div>
+</div>
+</div>
+</div>
 
 {% endblock content %}

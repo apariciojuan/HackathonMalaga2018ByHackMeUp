@@ -6,20 +6,38 @@
 <div class="containe">
     <div class="row">
         <div class="col-sm-12">
-            <div class="col-sm-2">
+            <div class="col-sm-1">
 
             </div>
-        <div class="col-sm-8">
+        <div class="col-sm-9">
 {% if object_list %}
-          {% for person in object_list %}
-                <div>
-                    {{ person.nombre }} -- {{ person.apellido }} --
-                    {{ person.edad }}  -- {{ person.telefono }} --
-                    {{ person.ocupacion }} -- {{ person.ciudad }} --
-                    {{ person.disponibilidad }} -- {{ person.franjaHoraria }}
-                      <a href="{% url  'voluntario:ver_person' person.id %}">Ver Detalle</a>
-                </div>
+
+  <table style="width:100%">
+    <tr>
+      <th>Voluntario</th>
+      <th>Lunes</th>
+      <th>Martes</th>
+      <th>Miercoles</th>
+      <th>Jueves</th>
+      <th>Viernes</th>
+      <th>Sabado</th>
+      <th>Domingo</th>
+    </tr>
+  {% for person in object_list %}
+    <tr>
+      <td>{{ person.nombre }} {{ person.apellido }}</td>
+      <td>{% for d in person.disponibilidad.Lunes.all %} {{ d }} {% endfor %}</td>
+      <td>{% for d in person.disponibilidad.Martes.all %} {{ d }} {% endfor %}</td>
+      <td>{% for d in person.disponibilidad.Miercoles.all %} {{ d }} {% endfor %}</td>
+      <td>{% for d in person.disponibilidad.Jueves.all %} {{ d }} {% endfor %}</td>
+      <td>{% for d in person.disponibilidad.Viernes.all %} {{ d }} {% endfor %}</td>
+      <td>{% for d in person.disponibilidad.Sabado.all %} {{ d }} {% endfor %}</td>
+      <td>{% for d in person.disponibilidad.Domingo.all %} {{ d }} {% endfor %}</td>
+      <td><a href="{% url  'voluntario:ver_person' person.id %}">Ver Detalle</a></td>
+    </tr>
           {% endfor %}
+</table>
+
 {% endif %}
 </div>
 

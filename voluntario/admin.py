@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Person
+from .models import Person, DiasDisponibles, horario
 # Register your models here.
 
  #De esta forma puedo hacer que muestre el modelo comoyo quiero
@@ -26,3 +26,6 @@ class PersonAdmin(admin.ModelAdmin):
         'ciudad',
         'ocupacion'
     )
+
+admin.site.register(DiasDisponibles)
+admin.site.register(horario)
