@@ -24,7 +24,6 @@ class PersonAdmin(admin.ModelAdmin):
     list_filter = (
         'disponibilidad',
         'ciudad',
-        'ocupacion'
     )
 
 admin.site.register(DiasDisponibles)

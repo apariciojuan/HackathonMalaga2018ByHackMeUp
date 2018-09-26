@@ -29,14 +29,13 @@ class horario(models.Model):
 
 
 class DiasDisponibles(models.Model):
-    Lunes = models.ManyToManyField(horario, related_name='lunes_set', related_query_name="lunes_q", blank=True)
-    Martes = models.ManyToManyField(horario, related_name='martes_set', related_query_name="martes_q", blank=True)
-    Miercoles = models.ManyToManyField(horario, related_name='miercoles_set', related_query_name="miercoles_q", blank=True)
-    Jueves = models.ManyToManyField(horario, related_name='jueves_set', related_query_name="jueves_q", blank=True)
-    Viernes = models.ManyToManyField(horario, related_name='viernes_set', related_query_name="viernes_q", blank=True)
-    Sabado = models.ManyToManyField(horario, related_name='sabado_set', related_query_name="sabado_q", blank=True)
-    Domingo = models.ManyToManyField(horario, related_name='domingo_set', related_query_name="domingo_q", blank=True)
-
+    Lunes = models.ManyToManyField(horario, related_name='lunes_set', blank=True)
+    Martes = models.ManyToManyField(horario, related_name='martes_set', blank=True)
+    Miercoles = models.ManyToManyField(horario, related_name='miercoles_set', blank=True)
+    Jueves = models.ManyToManyField(horario, related_name='jueves_set', blank=True)
+    Viernes = models.ManyToManyField(horario, related_name='viernes_set', blank=True)
+    Sabado = models.ManyToManyField(horario, related_name='sabado_set', blank=True)
+    Domingo = models.ManyToManyField(horario, related_name='domingo_set', blank=True)
 
 
 class Person(models.Model):
@@ -47,7 +46,7 @@ class Person(models.Model):
     email = models.EmailField(max_length=50)
     ocupacion = models.CharField(max_length=50)
     ciudad = models.CharField(max_length=100, choices=ciudades)
-    disponibilidad = models.ForeignKey(DiasDisponibles, on_delete=models.CASCADE, related_name='vol')
+    disponibilidad = models.ForeignKey(DiasDisponibles, on_delete=models.CASCADE)
 
     def __str__(self):
         return '{} {}'.format(self.nombre, self.apellido)
