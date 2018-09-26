@@ -77,11 +77,11 @@ def PersonListFilter(request):
                                     and usuarios[x].disponibilidad.Domingo.all()[0].to != '--'):
                                 queryset.append(usuarios[x])
             else:
+                if filterRecive2 == [] and filterRecive == []:
                 #si no hay filtro o es todo manda todo
-                queryset = Person.objects.all()
+                    queryset = Person.objects.all()
         else:
             return HttpResponseRedirect('/')
-
     elif request.method == 'GET':
         return HttpResponseRedirect('/')
 #esta parte es para la paginacion manteniendo el filtro queda para otra version
@@ -92,7 +92,6 @@ def PersonListFilter(request):
         queryset = Articles.objects.filter(disponibilidad__in=filterRecive)
     else:
         return HttpResponseRedirect('/')
-
     ctx = {'form': form, 'object_list': queryset,
            'objectFilter': filterRecive}
     return render(request, 'home_list.html', ctx)
