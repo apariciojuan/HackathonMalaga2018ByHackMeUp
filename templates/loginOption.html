@@ -2,13 +2,19 @@
  <ul>
       {% if request.user.is_authenticated%}
           <li class="nav-item">
-              {{request.user.username}}
-              <a class="nav-link" href="{% url "accounts:logout" %}">logout</a>
-              <a class="nav-link" href="{% url "voluntario:crear_persona" %}">Agregar Voluntario</a>
+              <h4>User: {{request.user.username}}</h4>
+          </li>
+          <br>
+          <li class="nav-item">
+                <a class="btn btn-primary" href="{% url "accounts:logout" %}">logout</a>
+          </li>
+          <br>
+          <li class="nav-item">
+              <a class="btn btn-primary" href="{% url "voluntario:crear_persona" %}">Agregar Voluntario</a>
           </li>
       {% else %}
           <li class="nav-item">
-              <a class="nav-link" href="{% url "accounts:login" %}">Login</a>
+              <a class="btn btn-primary" href="{% url "accounts:login" %}">Login</a>
           </li>
       {% endif %}
   </ul>

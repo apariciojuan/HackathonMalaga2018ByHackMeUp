@@ -4,26 +4,23 @@
 {% block content %}
 <div class="containe">
     <div class="row">
-        <div class="col-sm-12">
-            <div class="col-sm-1">
+        <div class="col-sm-1">
 
-            </div>
+        </div>
         <div class="col-sm-10">
-          <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
+            <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
 
-            {{ form2.as_table }}
-            <button type="submit">Guardar</button>
-          </form>
-  <a href="{% url  'voluntario:home' %}">Volver</a>
-</div>
+              {{ form2.as_p }}
+              <button class="btn btn-outline-primary" type="submit">Guardar</button>
+              <a class="btn btn-outline-primary" href="{% url  'voluntario:home' %}">Volver</a>
+            </form>
+        </div>
 
-
-  <div class="col-sm-1">
-  </div>
+        <div class="col-sm-1">
+        </div>
+    </div>
 </div>
-</div>
-</div>
-
+<br>
 {% endblock content %}

@@ -7,13 +7,12 @@
       {% block title %} ONG {% endblock %}
     </title>
     <meta charset="utf-8">
-    <meta name="description" content="ONG">
-    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script> <!-- markdown necessary -->
-    <!-- Bootstrap core CSS -->
-    <link href="https://bootswatch.com/4/minty/bootstrap.min.css" rel="stylesheet">
-    <!-- <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet"> -->
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.css">
+    <meta name="description" content="ONG Vuluntarios Profesionales">
+     <meta name="author" content="Juan Jose Aparicio">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
     <link href=" {% static "css/style.css" %}" rel="stylesheet">
     {% block css %}{% endblock css %}
   </head>
@@ -22,16 +21,16 @@
     <header>
       <div class="containe cabecera">
         <div class="row bg-primary ">
-          <div class="col-sm-12 imagenEncabezado">
+          <div class="imagenEncabezado">
 
-            <div class="col-sm-2">
+            <div class="col-sm-1">
 
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-10">
               <a class="tituloPagina"  href="/">Voluntarios Profesionales ONG</a>
             </div>
-            <div class="col-sm-2">
-                {# ver que poner o sacar #}{% include 'loginOption.html' %}
+            <div class="col-sm-1">
+
             </div>
            <!-- <div class="col-sm-5">
                <ul class="navbar-nav">
@@ -50,11 +49,13 @@
     <!-- Footer -->
     <footer class="py-2 bg-primary ">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; HackMeUp {% now "Y" %}</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Hackathon Malaga {% now "Y" %}</p>
       </div>
 
     </footer>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 
 </html>

@@ -127,7 +127,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 LOGIN_REDIRECT_URL = reverse_lazy('voluntario:home')
 LOGOUT_REDIRECT_URL = reverse_lazy('accounts:login')
-
+LOGIN_URL = reverse_lazy('accounts:login')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticRoot')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

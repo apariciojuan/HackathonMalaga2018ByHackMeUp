@@ -5,7 +5,6 @@
 
 <div class="containe">
     <div class="row">
-        <div class="col-sm-12">
             <div class="col-sm-1">
 
             </div>
@@ -21,7 +20,7 @@
                 <li>Ciudad:{{ object.ciudad }}</li>
               </ul>
 
-                <table style="width:100%">
+                <table class="table" style="width:100%">
                   <tr>
                     <th>Lunes</th>
                     <th>Martes</th>
@@ -44,10 +43,10 @@
               <br>
           </div>
           {% if request.user.is_authenticated%}
-              <a href="{% url  'voluntario:edit_person' object.id %}">Edit</a>
-              <a href="{% url  'voluntario:borrar_person' object.id %}">Borrar</a>
+              <a class="btn btn-outline-primary" href="{% url  'voluntario:edit_person' object.id %}">Edit</a>
+              <a class="btn btn-outline-primary" href="{% url  'voluntario:borrar_person' object.id %}">Borrar</a>
           {% endif %}
-          <a href="{% url  'voluntario:home' %}">Volver</a>
+          <a class="btn btn-outline-primary" href="{% url  'voluntario:home' %}">Volver</a>
 {% endif %}
 
   </div>
@@ -56,7 +55,6 @@
     <div class="col-sm-1">
     </div>
   </div>
- </div>
 </div>
-
+<br>
 {% endblock content %}
