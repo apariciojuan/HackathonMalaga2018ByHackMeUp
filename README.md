@@ -16,3 +16,8 @@ Posteriores versiones se modificara:
    como los manda e backend.
 6- Optimizacion de filtrado en general.
 
+para mirar como quedo:
+http://35.211.207.209
+
+Registrate tu usuario y veras las opciones completas:
+http://35.211.207.209/usuarios/registrar/
