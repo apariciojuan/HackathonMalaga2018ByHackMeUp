@@ -1,0 +1,22 @@
+{
+  "cars": [
+    {
+        "licenseplate": "ABC123",
+        "model": "Ford Mustang",
+        "year": 1969,
+        "km": 240000
+    },
+    {
+        "licenseplate": "BWF678",
+        "model": "Volkswagen Transporter",
+        "year": 2014,
+        "km": 180000
+    },
+    {
+        "licenseplate": "ZNP987",
+        "model": "Porsche 911",
+        "year": 2005,
+        "km": 90000
+    } 
+  ]
+}
