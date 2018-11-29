@@ -16,6 +16,8 @@ Posteriores versiones se modificara:
    como los manda e backend.
 6- Optimizacion de filtrado en general.
 
+
+Desconectado hasta nuevo aviso:
 para mirar como quedo:
 http://35.211.207.209
 
